@@ -1,71 +1,91 @@
-# AI-Resume-Analyzer-Expert
+# 🚀 AI Resume Analyzer & Interview Trainer (RAG-powered)
 
-**AI-Powered Resume Analyzer**, a cutting-edge application designed to mimic the expertise of an HR professional! This tool leverages the power of **Google Generative AI** to analyze resumes, evaluate job compatibility, and offer actionable insights for career enhancement.  
-
----
-
-## 📋 **Project Overview**  
-
-The **AI-Powered Resume Analyzer** serves as a virtual HR assistant, providing:  
-- Detailed resume evaluation, including strengths and weaknesses.  
-- Suggestions for skill improvement and recommended courses.  
-- Job-specific resume analysis to measure compatibility and alignment with job descriptions.  
-
-Whether you’re a job seeker or a recruiter, this tool simplifies resume assessment and improvement.  
+An **AI-powered career assistant** that helps job seekers prepare for interviews end-to-end.  
+This Streamlit-based project combines **Resume Analysis**, **ATS Matching**, **Interview Simulation**, and **Role-specific Question Generation** into a single application.  
 
 ---
 
-## 🔑 **Features**  
+## 📖 Overview
+The **AI Resume Analyzer & Interview Trainer** is designed to act like your **personal HR + Technical mentor**.  
+It performs resume evaluation, checks ATS compatibility, generates role-based interview questions using a RAG approach, and allows you to **practice in mock interview mode** with instant AI feedback and scoring.  
 
-### 1️⃣ **General Resume Analysis**  
-- Summarizes the resume in one line.  
-- Highlights existing skill sets.  
-- Identifies skill gaps and suggests improvements.  
-- Recommends popular courses to enhance the resume.  
-- Provides a thorough evaluation of strengths and weaknesses.  
-
-### 2️⃣ **Resume Matching with Job Description**  
-- Analyzes resume compatibility with a specific job description.  
-- Provides a match score in percentage.  
-- Highlights missing skills and areas needing improvement.  
-- Suggests whether the resume is ready for the job or requires further enhancements.  
+This project is ideal for:
+- Students preparing for placements
+- Professionals switching careers
+- Anyone wanting to sharpen interview skills  
 
 ---
 
-## 🛠️ **Tech Stack**  
+## ✨ Features
 
-| **Component**       | **Technology**                  |  
-|----------------------|----------------------------------|  
-| **Frontend**         | [Streamlit](https://streamlit.io/) |  
-| **Backend**          | Python                          |  
-| **AI Model**         | [Google Generative AI (Gemini)](https://makersuite.google.com/) |  
-| **PDF Parsing**      | `pdfplumber`                    |  
-| **OCR Fallback**     | `pytesseract`                   |  
-| **Environment Config** | `.env` for API key security    |  
+### 📄 Resume Analyzer
+- Extracts text from resumes (PDF) using **pdfplumber** (OCR fallback with pytesseract).  
+- Evaluates strengths, weaknesses, and missing skills with **Google Gemini AI**.  
+- Provides ATS (Applicant Tracking System) keyword match percentage against job descriptions.  
+- Suggests **courses & learning resources** to fill skill gaps.  
+
+### 🎤 Interview Trainer
+- Role-specific interview questions (Software Developer, Data Scientist, DevOps, HR Manager, etc.).  
+- RAG-style retrieval using **SentenceTransformers + FAISS embeddings**.  
+- AI-generated **model answers & rubrics** for each question.  
+
+### 🧑‍💻 Mock Interview Mode
+- Get a set of technical + HR questions.  
+- Submit answers in text (optional: audio STT support).  
+- Automatic **scoring (0–100)** using embedding similarity.  
+- AI-driven **feedback & improvement tips**.  
+- Track performance over time.  
+
+### 📊 Progress Tracking & Reports
+- Saves user sessions locally (`user_data/`).  
+- Visualizes score improvements across practice sessions.  
+- Generates a **professional PDF Interview Readiness Report** with feedback.  
 
 ---
 
-## 📊 **How It Works**
+## 🛠️ Tech Stack
 
-1. **Resume Parsing**  
-   - Extracts text from PDF files using `pdfplumber` or OCR as a fallback.
-
-2. **AI Analysis**  
-   - Utilizes Google Generative AI to summarize and analyze resume content.  
-   - Matches skills with job descriptions for compatibility scoring.
-
-3. **Insightful Feedback**  
-   - Provides actionable suggestions for skill enhancement, including course recommendations.  
-   - Highlights strengths and weaknesses to refine resumes for better opportunities.
+| Component              | Technology Used |
+|------------------------|-----------------|
+| **Frontend**           | [Streamlit](https://streamlit.io/) |
+| **Backend**            | Python |
+| **AI Model**           | [Google Gemini AI](https://ai.google.dev/) |
+| **Embeddings (RAG)**   | [SentenceTransformers](https://www.sbert.net/) |
+| **Vector Search**      | FAISS |
+| **PDF Parsing**        | pdfplumber, pdf2image, pytesseract |
+| **Visualization**      | Matplotlib |
+| **Report Generation**  | ReportLab |
 
 ---
 
-![image]()
+## ⚡ How It Works
 
-## 🙌 **Contributing**
+1. **Upload Resume (PDF)** → Extract text using pdfplumber/OCR.  
+2. **Resume Analyzer** → Gemini AI evaluates, highlights missing skills, and suggests improvements.  
+3. **ATS Match** → Compares resume keywords vs job description.  
+4. **Interview Trainer** → Retrieves role-based questions, generates model answers.  
+5. **Mock Interview** → Candidate answers → AI evaluates → Provides feedback + score.  
+6. **Progress & Reports** → Tracks practice history and generates a downloadable PDF report.  
 
-Welcome contributions to make this tool better!
+---
 
-1. **Fork** the repository.  
-2. **Create a new branch** for your feature or bug fix.  
-3. **Submit a pull request** with detailed information about your changes.
+## 📂 Project Structure
+
+├── app.py # Main Streamlit application
+├── requirements.txt # Project dependencies
+├── README.md # Documentation
+├── user_data/ # Stores user practice sessions & progress
+└── .env # API key (GOOGLE_API_KEY)
+
+
+
+---
+
+## 🚀 Setup & Installation
+
+### 1️⃣ Clone Repository
+```bash
+git clone https://github.com/Ritam200/AI-Resume-Analyzer-Expert
+cd AI-Resume-Analyzer-Expert
+
+
