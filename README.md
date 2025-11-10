@@ -49,7 +49,7 @@ This project is ideal for:
 |------------------------|-----------------|
 | **Frontend**           | [Streamlit](https://streamlit.io/) |
 | **Backend**            | Python |
-| **AI Model**           | [Google Gemini AI](https://ai.google.dev/) |
+| **AI Model**           | [Google Gemini AI] |
 | **Embeddings (RAG)**   | [SentenceTransformers](https://www.sbert.net/) |
 | **Vector Search**      | FAISS |
 | **PDF Parsing**        | pdfplumber, pdf2image, pytesseract |
